@@ -16,9 +16,10 @@
         android:layout_height="wrap_content"
         android:background="@drawable/layer_list_badge"
         android:gravity="center"
-        android:text="99"
+        android:text="00"
         android:textColor="@android:color/white"
-        android:textSize="14dp" />
+        android:textSize="@dimen/badge_text_size"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/b"
@@ -30,7 +31,8 @@
         android:gravity="center"
         android:text="999"
         android:textColor="@android:color/white"
-        android:textSize="15dp" />
+        android:textSize="@dimen/badge_text_size"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/c"
@@ -42,12 +44,15 @@
         android:gravity="center"
         android:text="★99|99"
         android:textColor="@android:color/white"
-        android:textSize="15dp" />
+        android:textSize="@dimen/badge_text_size"
+        android:textStyle="bold" />
 
     <RelativeLayout
         android:id="@+id/icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="false"
+        android:layout_alignWithParentIfMissing="false"
         android:layout_centerInParent="true">
 
         <ImageView
@@ -57,22 +62,36 @@
             android:src="@mipmap/ic_launcher" />
 
         <TextView
+            android:id="@+id/badge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/ic_launcher"
+            android:layout_alignTop="@+id/ic_launcher"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginTop="-2dp"
             android:background="@drawable/layer_list_badge"
             android:gravity="center"
             android:textColor="@android:color/white"
-            android:textSize="15dp"
-            android:id="@+id/textView"
-            android:layout_alignEnd="@+id/ic_launcher" />
+            android:textSize="@dimen/badge_text_size"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
     <TextView
-        android:layout_below="@+id/icon"
-        android:layout_centerHorizontal="true"
+        android:id="@+id/dimen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Icon = 72dp | badge = 25dp"/>
+        android:layout_below="@+id/icon"
+        android:layout_centerHorizontal="true"
+        android:text="Icon = 72dp | Badge = 24dp | textSize = 12dp" />
+
+    <Button
+        android:id="@+id/increase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dimen"
+        android:layout_centerHorizontal="true"
+        android:onClick="onIncrease"
+        android:text="Increase" />
 
 </RelativeLayout>
